@@ -1,13 +1,14 @@
 package org.mrlem.blueprint.components;
 
-import android.util.Log;
+import org.greenrobot.eventbus.EventBus;
+import org.mrlem.blueprint.events.SomethingCompletedEvent;
 
 
 public class CustomBeanImpl implements CustomBean {
 
     @Override
     public void doSomething() {
-        Log.i("custom", "did something");
+        EventBus.getDefault().post(new SomethingCompletedEvent());
     }
 
 }
