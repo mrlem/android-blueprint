@@ -13,8 +13,6 @@ A basic Android project with common frameworks
 
 ## Architectural features
 
-
-
 ### Todo:
 * Implement data-model driven arch
 * Investigate reactive patterns
