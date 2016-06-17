@@ -1,12 +1,8 @@
 package org.mrlem.blueprint.components;
 
 
-import android.util.Log;
+public interface CustomBean {
 
-public class CustomBean {
-
-    public void doSomething() {
-        Log.i("custom", "did something");
-    }
+    void doSomething();
 
 }

@@ -2,6 +2,7 @@ package org.mrlem.blueprint.injection.modules;
 
 import org.mrlem.blueprint.BlueprintApplication;
 import org.mrlem.blueprint.components.CustomBean;
+import org.mrlem.blueprint.components.CustomBeanImpl;
 
 import javax.inject.Singleton;
 
@@ -23,6 +24,6 @@ public class CustomModule {
 
     @Provides @Singleton
     public CustomBean providesBean() {
-        return new CustomBean();
+        return new CustomBeanImpl();
     }
 }
