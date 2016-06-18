@@ -3,5 +3,5 @@
     <string name="main_text">Hello world!</string>
     <string name="main_text_done">Done</string>
 
-    <string name="main_button">Test</string>
+    <string name="main_button">Do something</string>
 </resources>
