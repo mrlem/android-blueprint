@@ -1,10 +1,10 @@
-package org.mrlem.blueprint.components;
+package org.mrlem.blueprint.managers;
 
 import org.greenrobot.eventbus.EventBus;
 import org.mrlem.blueprint.events.SomethingCompletedEvent;
 
 
-public class CustomBeanImpl implements CustomBean {
+public class CustomManagerImpl implements CustomManager {
 
     @Override
     public void doSomething() {

@@ -1,8 +1,8 @@
 package org.mrlem.blueprint.injection.modules;
 
 import org.mrlem.blueprint.BlueprintApplication;
-import org.mrlem.blueprint.components.CustomBean;
-import org.mrlem.blueprint.components.CustomBeanImpl;
+import org.mrlem.blueprint.managers.CustomManager;
+import org.mrlem.blueprint.managers.CustomManagerImpl;
 
 import javax.inject.Singleton;
 
@@ -23,7 +23,7 @@ public class ApplicationModule {
     }
 
     @Provides @Singleton
-    public CustomBean providesBean() {
-        return new CustomBeanImpl();
+    public CustomManager providesBean() {
+        return new CustomManagerImpl();
     }
 }

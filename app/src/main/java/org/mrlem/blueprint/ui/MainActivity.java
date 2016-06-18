@@ -10,22 +10,25 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.mrlem.blueprint.BlueprintApplication;
-import org.mrlem.blueprint.components.CustomBean;
+import org.mrlem.blueprint.managers.CustomManager;
 import org.mrlem.blueprint.R;
 import org.mrlem.blueprint.events.SomethingCompletedEvent;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-// TODO - add ButterKnife view injection & listener injection
+
 // TODO - add retrofit APIs
 
 public class MainActivity extends AppCompatActivity {
 
-    @Inject CustomBean mCustomBean;
+    @Inject CustomManager mCustomBean;
     @Inject LocationManager mLocationManager;
 
-    private TextView mTextView;
+    @BindView(R.id.text) TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ((BlueprintApplication) getApplication()).component().inject(this);
 
         setContentView(R.layout.activity_main);
-        mTextView = (TextView) findViewById(R.id.text);
-
-        View button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCustomBean.doSomething();
-            }
-        });
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -57,8 +52,14 @@ public class MainActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
+    @OnClick(R.id.button)
+    void onButtonClick() {
+        mCustomBean.doSomething();
+    }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void on(SomethingCompletedEvent event) {
         mTextView.setText(R.string.main_text_done);
     }
+
 }
