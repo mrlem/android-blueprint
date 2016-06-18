@@ -5,11 +5,11 @@ A basic Android project with common frameworks
 
 * Dagger2 - dependency injection
 * EventBus - event handling
+* Expresso - tests
 
 ### Todo:
 * Butterknife (8.1 conflicts with Dagger2) - view/listener injection
 * Retrofit - REST API
-* Expresso - tests
 
 ## Architectural features
 
