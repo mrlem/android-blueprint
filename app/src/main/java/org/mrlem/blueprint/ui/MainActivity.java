@@ -19,7 +19,6 @@ import javax.inject.Inject;
 
 // TODO - add ButterKnife view injection & listener injection
 // TODO - add retrofit APIs
-// TODO - add tests
 
 public class MainActivity extends AppCompatActivity {
 

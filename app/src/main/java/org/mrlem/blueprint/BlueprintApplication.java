@@ -5,7 +5,7 @@ import android.app.Application;
 import org.mrlem.blueprint.injection.DaggerBlueprintApplicationComponent;
 import org.mrlem.blueprint.injection.modules.AndroidModule;
 import org.mrlem.blueprint.injection.BlueprintApplicationComponent;
-import org.mrlem.blueprint.injection.modules.CustomModule;
+import org.mrlem.blueprint.injection.modules.ApplicationModule;
 
 
 public class BlueprintApplication extends Application {
@@ -19,7 +19,7 @@ public class BlueprintApplication extends Application {
         // init dagger deps injection
         component = DaggerBlueprintApplicationComponent.builder()
                 .androidModule(new AndroidModule(this))
-                .customModule(new CustomModule(this))
+                .applicationModule(new ApplicationModule(this))
                 .build();
         component().inject(this);
     }

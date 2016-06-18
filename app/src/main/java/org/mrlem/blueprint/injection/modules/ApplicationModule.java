@@ -11,14 +11,14 @@ import dagger.Provides;
 
 
 /**
- * Dagger module providing custom instances.
+ * Dagger module providing application-specific instances.
  */
 @Module
-public class CustomModule {
+public class ApplicationModule {
 
     private BlueprintApplication mApplication;
 
-    public CustomModule(BlueprintApplication application) {
+    public ApplicationModule(BlueprintApplication application) {
         mApplication = application;
     }
 

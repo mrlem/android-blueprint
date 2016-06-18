@@ -2,7 +2,7 @@ package org.mrlem.blueprint.injection;
 
 import org.mrlem.blueprint.BlueprintApplication;
 import org.mrlem.blueprint.injection.modules.AndroidModule;
-import org.mrlem.blueprint.injection.modules.CustomModule;
+import org.mrlem.blueprint.injection.modules.ApplicationModule;
 import org.mrlem.blueprint.ui.MainActivity;
 
 import javax.inject.Singleton;
@@ -11,7 +11,7 @@ import dagger.Component;
 
 
 @Singleton
-@Component(modules={ AndroidModule.class, CustomModule.class })
+@Component(modules={ AndroidModule.class, ApplicationModule.class })
 public interface BlueprintApplicationComponent {
 
     void inject(BlueprintApplication application);
